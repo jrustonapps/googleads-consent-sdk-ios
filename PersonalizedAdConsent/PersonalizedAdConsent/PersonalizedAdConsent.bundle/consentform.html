@@ -696,6 +696,16 @@
       var providers = consentInfo['providers'] || [];
       obj.providersEl.innerHTML = '';
       var providersList = document.createElement('ul');
+      
+      var provider = providers[i];
+      var providerTag = document.createElement('a');
+      providerTag.innerText = 'Appodeal';
+      providerTag.onclick = createPolicyUrlOnClick('https://www.appodeal.com/privacy-policy');
+      
+      var providerListItem = document.createElement('li');
+      providerListItem.appendChild(providerTag);
+      providersList.appendChild(providerListItem);
+      
       for (var i = 0; i < providers.length; i++) {
         var provider = providers[i];
         var providerTag = document.createElement('a');
